@@ -1,0 +1,25 @@
+name: install bukkit
+on: push
+jobs:
+  gradle:
+    runs-on: [ self-hosted, mc-home ]
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Read value from Properties-file
+        id: directory
+        uses: christian-draeger/read-properties@1.0.1
+        with:
+          path: './info.properties'
+          property: 'directory'
+
+      - name: Do something with your bumped release version
+        run: echo ${{ steps.directory.outputs.value }}
+        # will print "the value of 'the.key.of.the.property'"
+
+      - name: copy file
+        uses: canastro/copy-file-action@master
+        with:
+          source: "bukkit/*"
+          target: "${{ steps.directory.outputs.value }}"
