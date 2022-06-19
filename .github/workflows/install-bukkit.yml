@@ -1,13 +1,14 @@
 name: install bukkit
 on: push
 jobs:
-  gradle:
+  install-bukkit:
     runs-on: [ self-hosted, mc-home ]
     steps:
       - name: checkout
         uses: actions/checkout@v2
 
-      - run: sudo apt get install docker
+      - name: install docker
+        run: sudo apt get install docker
 
       - name: Read value from Properties-file
         id: read_property
