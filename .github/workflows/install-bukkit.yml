@@ -10,15 +10,8 @@ jobs:
       - name: install docker
         run: sudo apt get install docker
 
-      - name: Read value from Properties-file
-        id: read_property
-        uses: christian-draeger/read-properties@1.0.1
-        with:
-          path: './info.properties'
-          property: 'directory'
-
       - name: copy file
         uses: canastro/copy-file-action@master
         with:
           source: "bukkit/*"
-          target: "${{ steps.read_property.outputs.value }}"
+          target: "/home/mc/minecraft/test-bukkit"
