@@ -17,5 +17,5 @@ jobs:
       - name: copy file
         uses: canastro/copy-file-action@master
         with:
-          source: "bukkit/*"
+          source: "./bukkit/*"
           target: "${{ steps.read_property.outputs.value }}"
