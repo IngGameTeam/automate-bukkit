@@ -7,9 +7,6 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: install docker
-        run: sudo apt get install docker
-
       - name: Read value from Properties-file
         id: read_property
         uses: christian-draeger/read-properties@1.0.1
