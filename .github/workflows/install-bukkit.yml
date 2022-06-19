@@ -7,16 +7,13 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
 
+
       - name: Read value from Properties-file
         id: read_property
         uses: christian-draeger/read-properties@1.0.1
         with:
           path: './info.properties'
           property: 'directory'
-
-      - name: Do something with your bumped release version
-        run: echo ${{ steps.directory.outputs.value }}
-        # will print "the value of 'the.key.of.the.property'"
 
       - name: copy file
         uses: canastro/copy-file-action@master
