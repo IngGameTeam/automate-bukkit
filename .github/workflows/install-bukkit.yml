@@ -20,7 +20,7 @@ jobs:
           git init
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git remote add-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.out-repo }}
+          git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.out-repo }}
           cd ..
           for file in bukkit; do
             cp -r $file out/bukkit/
