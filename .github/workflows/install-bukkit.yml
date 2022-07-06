@@ -36,9 +36,9 @@ jobs:
             cd plugins
             wget https://github.com/$url/releases/download/$latest/$plugin-$latest.jar
           }
-          plugin IntellectualSites/FastAsyncWorldEdit FastAsyncWorldEdit-Bukkit
-          plugin ViaVersion/ViaVersion ViaVersion
-          plugin ViaVersion/ViaBackwards ViaBackwards
+          plugin 'IntellectualSites/FastAsyncWorldEdit' FastAsyncWorldEdit-Bukkit
+          plugin 'ViaVersion/ViaVersion' ViaVersion
+          plugin 'ViaVersion/ViaBackwards' ViaBackwards
           touch run.sh
           echo 'java -jar purpur.jar nogui' >> run.sh
           chmod +x ./run.sh
