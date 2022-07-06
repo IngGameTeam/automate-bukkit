@@ -6,7 +6,7 @@ jobs:
   install-bukkit:
     runs-on: [ self-hosted, mc-home ]
     steps:
-      - run: rm -r ./
+      - run: rm -r ..
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
