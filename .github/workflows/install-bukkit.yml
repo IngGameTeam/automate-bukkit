@@ -10,6 +10,7 @@ jobs:
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
       - run: |
+          mkdir out
           mkdir out/bukkit
           cd out/bukkit
           git config --global user.name "${{ github.actor }}"
