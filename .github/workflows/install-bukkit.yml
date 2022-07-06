@@ -2,7 +2,6 @@ name: install bukkit
 on: push
 env:
   repo: IngGameTeam/automate-bukkit
-  out-repo: IngGameTeam/automated-bukkit
 jobs:
   install-bukkit:
     runs-on: [ self-hosted, mc-home ]
@@ -20,7 +19,7 @@ jobs:
           git init
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.out-repo }}
+          git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.repo }}
           cd ..
           cd ..
           for file in bukkit; do
