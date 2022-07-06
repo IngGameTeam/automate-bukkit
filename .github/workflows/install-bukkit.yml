@@ -8,7 +8,7 @@ jobs:
     runs-on: [ self-hosted, mc-home ]
     steps:
       - run: |
-          git clone https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.repo }}
+          git clone https://${{ github.actor }}@github.com/${{ env.repo }}
           dir_name=$(basename ${{ env.repo }} /)
           cd $dir_name
           mkdir out
@@ -19,11 +19,11 @@ jobs:
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.out-repo }}
           cd ..
-          for file in ./bukkit/; do
+          for file in bukkit; do
             cp -r $file out/bukkit/
           done
           cd out/bukkit
           git checkout -b bukkit
           git add .
           git commit -m "done"
-          git push origin bukkit
+          git push origin bukkit --force
