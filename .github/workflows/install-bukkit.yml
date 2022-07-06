@@ -21,6 +21,7 @@ jobs:
             cp -r $file out/bukkit/
           done
           cd out/bukkit
+          git checkout -b bukkit
           git add .
           git commit -m "done"
-          git push origin bukkit
+          git push origin
