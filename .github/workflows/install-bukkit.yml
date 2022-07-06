@@ -6,8 +6,8 @@ jobs:
   install-bukkit:
     runs-on: [ self-hosted, mc-home ]
     steps:
-      - uses: actions/checkout@v2
-      - run: |
+      - uses: actions/checkout@v3
+        run: |
           mkdir out
           mkdir out/bukkit
           cd out/bukkit
