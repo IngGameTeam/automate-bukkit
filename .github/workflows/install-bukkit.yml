@@ -11,9 +11,10 @@ jobs:
           mkdir out
           mkdir out/bukkit
           cd out/bukkit
+          git init
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git clone https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.repo }}
+          git remote origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.repo }}
       - run: |
           for file in ./bukkit/; do
             cp -r $file out/bukkit/
