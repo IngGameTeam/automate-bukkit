@@ -7,7 +7,7 @@ jobs:
   install-bukkit:
     runs-on: [ self-hosted, mc-home ]
     steps:
-       - run: |
+      - run: |
           git clone https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.repo }}
           dir_name=$(basename ${{ env.repo }} /)
           cd $dir_name
