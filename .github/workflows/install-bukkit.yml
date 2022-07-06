@@ -1,7 +1,7 @@
 name: install bukkit
 on: push
 env:
-  repo: IngGameTeam/automated-bukkit
+  repo: IngGameTeam/automate-bukkit
 jobs:
   install-bukkit:
     runs-on: [ self-hosted, mc-home ]
