@@ -8,6 +8,7 @@ jobs:
     runs-on: [ self-hosted, mc-home ]
     steps:
       - run: |
+          rm -rf work
           mkdir work 
           cd work
           git clone https://${{ github.actor }}@github.com/${{ env.repo }}
