@@ -22,6 +22,7 @@ jobs:
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
           git remote add origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.out-repo }}
           cd ..
+          cd ..
           for file in bukkit; do
             cp -r $file out/bukkit/
           done
