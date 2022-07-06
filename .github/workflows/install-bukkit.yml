@@ -31,10 +31,10 @@ jobs:
           cd out/bukkit
           cd bukkit
           wget -O purpur.jar https://api.purpurmc.org/v2/purpur/1.19/latest/download
-          function plugin("$url", "$plugin") {
-            latest=$(curl -sL https://api.github.com/repos/$url/releases/latest | jq -r ".tag_name")
+          function plugin() {
+            latest=$(curl -sL https://api.github.com/repos/$1/releases/latest | jq -r ".tag_name")
             cd plugins
-            wget https://github.com/$url/releases/download/$latest/$plugin-$latest.jar
+            wget https://github.com/$1/releases/download/$latest/$2-$latest.jar
           }
           plugin 'IntellectualSites/FastAsyncWorldEdit' FastAsyncWorldEdit-Bukkit
           plugin 'ViaVersion/ViaVersion' ViaVersion
