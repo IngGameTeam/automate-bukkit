@@ -36,8 +36,8 @@ jobs:
           chmod +x ./run.sh
           ./run.sh
           rm -r eula.txt
-          touch 'eula=true' >> eula.txt 
-          echo "eula=true" >>f 
+          touch eula.txt
+          echo 'eula=true' >> eula.txt 
           ./run.sh
           rm -rf run.sh
           touch run.sh
