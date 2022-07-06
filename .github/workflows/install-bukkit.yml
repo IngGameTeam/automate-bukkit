@@ -2,19 +2,22 @@ name: install bukkit
 on: push
 env:
   repo: IngGameTeam/automate-bukkit
+  out-repo: IngGameTeam/automated-bukkit
 jobs:
   install-bukkit:
     runs-on: [ self-hosted, mc-home ]
     steps:
-      - uses: actions/checkout@v3
-      - run: |
+       - run: |
+          git clone https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.repo }}
+          dir_name=$(basename ${{ env.repo }} /)
+          cd $dir_name
           mkdir out
           mkdir out/bukkit
           cd out/bukkit
           git init
           git config --global user.name "${{ github.actor }}"
           git config --global user.email "${{ github.actor }}@users.noreply.github.com"
-          git remote origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.repo }}
+          git remote origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ env.out-repo }}
       - run: |
           for file in ./bukkit/; do
             cp -r $file out/bukkit/
