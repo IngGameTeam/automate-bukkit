@@ -56,5 +56,5 @@ jobs:
           cd ..
           git checkout -b bukkit
           git add .
-          git commit -m "done"
+          git commit -m "install done"
           git push origin bukkit --force
