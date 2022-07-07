@@ -36,6 +36,7 @@ jobs:
           cd bukkit
           wget -O purpur.jar https://api.purpurmc.org/v2/purpur/1.19/latest/download
           bash plugins.txt
+          rm -r plugins.txt
           rm -r eula.txt
           touch eula.txt
           echo 'eula=true' >> eula.txt 
