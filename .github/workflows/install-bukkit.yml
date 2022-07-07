@@ -6,7 +6,8 @@ env:
   ram: 6500M
 jobs:
   install-bukkit:
-    runs-on: [ self-hosted, mc-home ]
+    runs-on: ubuntu-latest
+    # runs-on: [ self-hosted, mc-home ]
     steps:
       - name: Get branch name
         id: branch-name
@@ -16,7 +17,7 @@ jobs:
           rm -rf work
           mkdir work 
           cd work
-          git clone https://${{ github.actor }}@github.com/${{ env.repo }}
+          git clone -b ${{ steps.branch-name.outputs.current_branch }} --single-branch https://${{ github.actor }}@github.com/${{ env.repo }}
           dir_name=$(basename ${{ env.repo }} /)
           cd $dir_name
           mkdir out
