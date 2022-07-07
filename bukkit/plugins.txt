@@ -8,4 +8,4 @@ function plugin() {
 plugin IntellectualSites/FastAsyncWorldEdit FastAsyncWorldEdit-Bukkit
 plugin ViaVersion/ViaVersion ViaVersion
 plugin ViaVersion/ViaBackwards ViaBackwards
-# plugin EssentialsX/Essentials EssentialsX
+plugin EssentialsX/Essentials EssentialsX
