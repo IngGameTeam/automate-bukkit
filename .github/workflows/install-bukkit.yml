@@ -8,6 +8,9 @@ jobs:
   install-bukkit:
     runs-on: [ self-hosted, mc-home ]
     steps:
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v5.4
       - name: install-bukkit
         run: |
           rm -rf work
@@ -49,7 +52,7 @@ jobs:
           chmod +x ./run.sh
           rm -rf plugins/stoponstart.jar 
           cd ..
-          git checkout -b bukkit
+          git checkout -b ${{ steps.branch-name.outputs.current_branch }}-bukkit
           git add .
           git commit -m "install done"
-          git push origin bukkit --force
+          git push origin ${{ steps.branch-name.outputs.current_branch }}-bukkit --force
